@@ -78,7 +78,7 @@ get the groq api keys from here==https://console.groq.com/keys
 ## Usage
 
 * **Upload a Document** via `/upload` endpoint and choose a chunking strategy (`sentences` or `fixed`).
-* **Chat with the model** via `/chat` endpoint. It retrieves answers based on document chunks and maintains session memory using Redis.
+* **Chat with the model** via `/chat` endpoint. It retrieves answers based on document chunks and maintains session memory using Redis and also suppoer interview booking.
 
 ---
 
