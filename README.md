@@ -1,6 +1,6 @@
 # Chunking RAG App
 
-This project is a FastAPI-based application for document processing and question answering. It supports two chunking strategies for document text and leverages PostgreSQL, Qdrant, and Redis for storing metadata, embeddings, and chat memory.
+This project is a FastAPI-based application for document processing and question answering and interview booking. It supports two chunking strategies for document text and leverages PostgreSQL, Qdrant, and Redis for storing metadata, embeddings, and chat memory.
 
 ---
 
