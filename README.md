@@ -31,6 +31,7 @@ This project is a FastAPI-based application for document processing and question
    git clone https://github.com/sudipmajkoti07/Chunking_rag.git
    cd Chunking_rag
    ```
+get the groq api keys from here==https://console.groq.com/keys
 
 2. **Create a `.env` file** with the following content:
 
