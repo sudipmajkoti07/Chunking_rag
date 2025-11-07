@@ -1,7 +1,7 @@
 # Chunking RAG App with Interview Booking
 
 This is a **FastAPI-based application** for document processing, RAG-based question answering, and interview booking. It uses PostgreSQL to store document metadata and bookings, Qdrant for document embeddings, and Redis for chat memory.
-
+you need to have docker in your laptop
 ---
 
 ## Features
