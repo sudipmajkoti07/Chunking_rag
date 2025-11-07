@@ -174,13 +174,16 @@ def setup_interview(user_input, session_id="default"):
         # 2. Construct prompt
         prompt = f"""You are an interview booking agent.
 You need these details to book: name, email, date like 2025-12-12 etc, time like 12 pm etc
+do not ask about which interview it is for.
 
 Process:
 1. Collect missing information one at a time politely
 2. After receiving all details, ask for confirmation
 3. After user confirms, thank them for booking
 4. Be concise and respond in short sentences
-5.don't ask the reason of booking the interview
+5. don't ask the reason of booking the interview
+and once confirmed, save the details to the database.
+and once confirmed it don't ask any more questions.
 
 User Question:
 {user_input}
@@ -191,6 +194,7 @@ Last Conversations (from memory):
 Instructions:
 - Be concise and accurate.
 - Guide the user step by step.
+make response short and precise
 """
 
         # 3. Prepare messages
