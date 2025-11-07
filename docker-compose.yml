@@ -1,0 +1,44 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: documents_db
+    ports:
+      - "5432:5432"
+
+  qdrant:
+    image: qdrant/qdrant:v1.9.0
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./app:/code/app        # Bind mount only your app folder
+      - /code/__pycache__      # Optional: avoid permission issues with __pycache__
+    ports:
+      - "8000:8000"
+    environment:
+      # Optional: pass env vars for development
+      DATABASE_URL: postgres://user:password@postgres:5432/documents_db
+    depends_on:
+      - postgres
+      - qdrant
+
+volumes:
+  qdrant_storage: {}
